@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        constjsondata=`{
+    "coord": {
+        "lon": 83,
+        "lat": 25.3333
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 36.26,
+        "feels_like": 40.41,
+        "temp_min": 36.26,
+        "temp_max": 36.26,
+        "pressure": 996,
+        "humidity": 42,
+        "sea_level": 996,
+        "grnd_level": 987
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 5.16,
+        "deg": 78,
+        "gust": 6.94
+    },
+    "clouds": {
+        "all": 85
+    },
+    "dt": 1751875886,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1751845391,
+        "sunset": 1751894532
+    },
+    "timezone": 19800,
+    "id": 1253405,
+    "name": "Varanasi",
+    "cod": 200
+}`;
+const obj = JSON.parse(constjsondata);
+        function displayWeather() {
+            console.log("Clicked");
+            // console.table(obj);
+            console.table(obj.weather[0].id);
+            document.getElementById("id").innerHTML=`id:${obj.weather[0].id}<br>`;
+            console.table(obj.weather[0].description);
+            document.getElementById("d").innerHTML=`Description: ${obj.weather[0].description} <br>`;
+            console.table(obj.weather[0].icon);
+            document.getElementById("i").innerHTML=`icon: ${obj.weather[0].icon} <br>`;
+            console.table(obj.weather[0].main);
+            document.getElementById("m").innerHTML=`main:${obj.weather[0].main}<Lbr>`;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Weather fetch Api</h1>
+    <div id="d"></div>
+    <div id="i"></div>
+    <div id="id"></div>
+    <div id="m"></div>
+    <input type="button" value="Get Weather" onclick="displayWeather()" id="getWeather">
+</body>
+
+</html>

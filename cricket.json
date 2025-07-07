@@ -1,0 +1,24 @@
+{
+    "Cricketdetails": [
+        {
+            "team1": "India",
+            "team2": "England",
+            "toss": "India",
+            "innings1": {
+                "player1": {
+                    "name": "Piyush",
+                    "runs": 123,
+                    "status": "out caught Root bowled Harry Brook"
+                },
+                "player2": {
+                    "name": "Prince",
+                    "runs": 80
+                },
+                "player3": {
+                    "name": "Kishan",
+                    "runs": 50
+                }
+            }
+        }
+    ]
+}

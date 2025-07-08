@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+
+<body>
+<script>
+        function f1(n) {
+            var promise = new Promise(function (resolve, reject) {
+                if (n % 2 == 0)
+                    resolve('your promise accepted')
+                else
+                    reject('your promise rejected')
+            })
+            promise
+                .then(function (successmsg) {
+                    console.log(successmsg);
+                }, function (errormsg) {
+                    console.log(errormsg)
+                })
+        }
+    </script>
+    Output <div id="output"></div><br>
+    <input type="button" value="promise" onclick="f1(3)">
+</body>
+
+</html>

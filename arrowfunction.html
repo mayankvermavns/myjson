@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArrowFunction</title>
+</head>
+
+<body>
+
+
+    <script>
+        const add = (a, b) => a + b;
+
+        function addAB(a, b) {
+            return a + b;
+        }
+        function f1() {
+            let x = addAB(6, 7);
+            console.log(x);
+        }
+        function f2() {
+            let x = add(8, 7);
+            console.log(x);
+        }
+    </script>
+    <input onclick="f1()" type="button">clickme</input>
+    <input onclick="f2()" type="button">clickme</input>
+</body>
+
+</html>

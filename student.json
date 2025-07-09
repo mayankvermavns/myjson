@@ -1,11 +1,20 @@
 {
-    "kishandetails": {
-        "rollnumber": 1,
-        "name": "Kishan kumar",
-        "fathername": "Omprakash kumar"
-    },
-    "princedetails": {
-        "rollnumbner": 2,
-        "name": "Prince kumar"
-    }
+    "students": [
+        {
+            "rollnumber": 1,
+            "name": "Kishan kumar"
+        },
+        {
+            "rollnumbner": 2,
+            "name": "Prince kumar"
+        },
+        {
+            "rollnumbner": 3,
+            "name": "Abhishek gupta"
+        },
+        {
+            "rollnumbner": 4,
+            "name": "Piyush Maurya"
+        }
+    ]
 }

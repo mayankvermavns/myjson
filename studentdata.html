@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data</title>
+</head>
+
+<body>
+    <script>
+        function studentData() {
+            const url = `https://mayankvermavns.github.io/myjson/student.json`;
+            console.log(url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error:${response.status}-${response.statusText}`)
+                    }
+                    return response.json()
+                })
+        }
+    </script>
+    <button type="button" onclick="studentData()">StudentDataFetch</button>
+</body>
+
+</html>

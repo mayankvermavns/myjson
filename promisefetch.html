@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise fetch</title>
+</head>
+
+<body>
+    <div>
+        <button onclick="fetchPrommise()"> Fetch Promise</button>
+        <!-- <button onclick="displayShow()">Promise</button> -->
+    </div>
+    <script>
+        constjsondata = `{
+    "Cricketdetails": [
+        {
+            "team1": "India",
+            "team2": "England",
+            "toss": "India",
+            "innings1": {
+                "player1": {
+                    "name": "Piyush",
+                    "runs": 123,
+                    "status": "out caught Root bowled Harry Brook"
+                },
+                "player2": {
+                    "name": "Prince",
+                    "runs": 80
+                },
+                "player3": {
+                    "name": "Kishan",
+                    "runs": 50
+                }
+            }
+        }
+    ]
+}`
+
+        function fetchPrommise() {
+            const url = `https://mayankvermavns.github.io/myjson/cricket.json`;
+            console.log(url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error:${response.status}-${response.statusText}`);
+
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log("Data received:", data);
+                })
+                .catch(error => {
+                    console.log("Fetch error:", error);
+                });
+
+        }
+
+        const obj = JSON.parse(constjsondata);
+
+        function displayShow() {
+            // console.log("Clicked");
+
+            document.getElementById("team1").innerHTML = `team1:${obj.Cricketdetails[0].team1}<br>`;
+            console.table(obj.Cricketdetails[0].team1);
+            document.getElementById("team2").innerHTML = `team2:${obj.Cricketdetails[0].team2}<br>`;
+            console.table(obj.Cricketdetails[0].team2);
+        }
+
+    </script>
+    <h1>Cricketdetails fetch Api</h1>
+    <div id="team1"></div>
+    <div id="team2"></div>
+
+    <input type="button" value="get Cricket" onclick="displayShow()" id="getCricket">
+
+</body>
+
+</html>

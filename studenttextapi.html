@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Search</title>
+    <script>
+        const jsondata = `
+        {
+            "students": [
+                {
+                    "rollnumber": 1,
+                    "name": "Kishan kumar"
+                },
+                {
+                    "rollnumber": 2,
+                    "name": "Prince kumar"
+                },
+                {
+                    "rollnumber": 3,
+                    "name": "Abhishek gupta"
+                },
+                {
+                    "rollnumber": 4,
+                    "name": "Piyush Maurya"
+                }
+            ]
+        }`;
+
+        const obj = JSON.parse(jsondata);
+
+        function fetchData() {
+            const name = document.getElementById("txtsearch").value.trim().toLowerCase();
+            const n = obj.students.length;
+            let pos = -1;
+            for (let i = 0; i < n; i++) {
+                if (obj.students[i].name.toLowerCase().trim() === name) {
+                    pos = i;
+                    break;
+                }
+            }
+            if (pos === -1) {
+                console.log("Not found");
+            } else {
+                console.table(obj.students[pos]);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" placeholder="Enter name to search" id="txtsearch">
+    <hr>
+    <button onclick="fetchData()">fetchData</button>
+    d
+</body>
+
+</html>

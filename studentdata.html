@@ -19,6 +19,13 @@
                     }
                     return response.json()
                 })
+                .then(data => {
+                    console.log("Data recieved:", data);
+                })
+                .catch(error => {
+                    console.log("fetch error:", error);
+
+                })
         }
     </script>
     <button type="button" onclick="studentData()">StudentDataFetch</button>

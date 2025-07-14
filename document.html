@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            border-color: red;
+            border-style: ridge;
+        }
+
+        .color {
+            /* border-color: green;
+            border-style: ridge; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1 class="ShowItem" id="h1">Id is H=h1</h1>
+        <h1 id="h2">Name is H=h2</h1>
+        <h1 name="bradman">My Name is Bradman</h1>
+        <h1 class="ShowItem">My ClassName is ShowItem</h1>
+
+    </div>
+
+    <input type="text" placeholder="search" id="search"><br><br>
+
+    <select id="getmethods">
+        <option value="---">---</option>
+        <option value="getElementById">getElementById</option>
+        <option value="getElementsByName">getElementsByName</option>
+        <option value="getElementsByClassName">getElementsByClassName</option>
+        <option value="getElementByTagName">getElementByTagName</option>
+        <option value="getElementByTagNameNS">getElementByTagNameNS</option>
+
+
+    </select>
+
+    <button onclick="showSelectedItems()">Show Selected Items</button>
+    <script>
+        function showSelectedItems() {
+            const getmethodslist = document.getElementById("getmethods");
+            const selectedmethod = getmethodslist.value;
+            const searchvalue = document.getElementById("search").value;
+            console.log(searchvalue);
+            console.log(selectedmethod);
+            if (selectedmethod == "getElementById") {
+                item = document.getElementById(searchvalue);
+                item.classList.add("highlight");
+                return;
+            }
+            if (selectedmethod == "getElementsByClassName") {
+                console.log("Class Name");
+                const items = document.getElementsByClassName(searchvalue);
+                const n = items.length;
+                for (let i = 0; i <= n - 1; i++)
+                    items[i].classList.add("highlight");
+                return;
+            }
+            if (selectedmethod == "getElementsByName") {
+                console.log("Name");
+                return;
+            }
+            if (selectedmethod == "getElementByTagName") {
+                console.log("TagName");
+                return;
+            }
+            if (selectedmethod == "getElementByTagNameNS") {
+                console.log("TagNameNS");
+                return;
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

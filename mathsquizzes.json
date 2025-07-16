@@ -2,7 +2,7 @@
     "subjects": [
         {
             "name": "Maths",
-            "quizzes": "https://mayankvermavns.github.io/myjson/mathsquizzes.json"
+            "quizzes": "maths_quizzes"
         },
         {
             "name": "Science",

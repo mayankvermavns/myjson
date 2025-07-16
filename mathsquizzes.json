@@ -1,0 +1,16 @@
+{
+    "subjects": [
+        {
+            "name": "Maths",
+            "quizzes": "maths_quizzes"
+        },
+        {
+            "name": "Science",
+            "quizzes": "science_quizzes"
+        },
+        {
+            "name": "GK",
+            "quizzes": "gk_quizzes"
+        }
+    ]
+}

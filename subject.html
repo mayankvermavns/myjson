@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject</title>
+</head>
+
+<body>
+    <script>
+        let downloadeddata = "";
+        function getSubjects() {
+            const url = `https://mayankvermavns.github.io/myjson/subjects.json`;
+            console.log(url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error : ${response.status}-${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+
+                    downloadeddata = data.subjects;
+
+                    console.log("Data received:", data)
+                })
+                .catch(error => {
+                    console.log("Fetch error:", error);
+                });
+        }
+
+
+    </script>
+    <div id="subject"></div>
+    <h1>Subjectdetails</h1>
+    <input type="button" value="GetSubject" onclick="getSubjects()"><br>
+    <script>
+        function showSubject() {
+            const drawdiv = document.getElementById("subject");
+            const n = downloadeddata.length;
+            let output = "<table border='1'>";
+
+            for (let i = 0; i <= n - 1; i++) {
+                console.log(downloadeddata[i]);
+                let currentrow = `<tr><td>${downloadeddata[i].name}</td><td><a href="${downloadeddata[i].url}">${downloadeddata[i].name}</a></td></tr>`;
+                output += currentrow;
+
+            }
+            output += "</table>";
+            drawdiv.innerHTML = output;
+        }
+
+
+    </script>
+    <input type="button" value="ShowSubject" onclick="showSubject()">
+</body>
+
+</html>

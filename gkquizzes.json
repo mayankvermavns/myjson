@@ -6,11 +6,11 @@
         },
         {
             "name": "Science",
-            "quizzes": "science_quizzes"
+            "quizzes": "https://mayankvermavns.github.io/myjson/sciencequizzes.json"
         },
         {
             "name": "GK",
-            "quizzes": "gk_quizzes"
+            "quizzes": "https://mayankvermavns.github.io/myjson/gkquizzes.json"
         }
     ]
 }

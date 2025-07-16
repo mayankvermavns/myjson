@@ -2,15 +2,15 @@
     "subjects": [
         {
             "name": "Maths",
-            "quizzes": "https://mayankvermavns.github.io/myjson/mathsquizzes.json"
+            "quizzes": "maths_quizzes"
         },
         {
             "name": "Science",
-            "quizzes": "https://mayankvermavns.github.io/myjson/sciencequizzes.json"
+            "quizzes": "science_quizzes"
         },
         {
             "name": "GK",
-            "quizzes": "https://mayankvermavns.github.io/myjson/gkquizzes.json"
+            "quizzes": "gk_quizzes"
         }
     ]
 }

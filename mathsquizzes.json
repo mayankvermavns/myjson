@@ -1,16 +1,92 @@
-{
-    "subjects": [
-        {
-            "name": "Maths",
-            "quizzes": "maths_quizzes"
-        },
-        {
-            "name": "Science",
-            "quizzes": "science_quizzes"
-        },
-        {
-            "name": "GK",
-            "quizzes": "gk_quizzes"
-        }
-    ]
-}
+[
+    {
+        "qno": "1",
+        "question": "What is the value of 7+8*2 ?",
+        "a": "30",
+        "b": "23",
+        "c": "22",
+        "d": "31",
+        "correct": "23"
+    },
+    {
+        "qno": "2",
+        "question": "What is the value of 3+25 ?",
+        "a": "28",
+        "b": "58",
+        "c": "23",
+        "d": "29",
+        "correct": "28"
+    },
+    {
+        "qno": "3",
+        "question": "What is 15% of 200 ?",
+        "a": "25",
+        "b": "30",
+        "c": "35",
+        "d": "40",
+        "correct": "30"
+    },
+    {
+        "qno": "4",
+        "question": "Which number is prime number ?",
+        "a": "4",
+        "b": "9",
+        "c": "11",
+        "d": "21",
+        "correct": "11"
+    },
+    {
+        "qno": "5",
+        "question": "What is the perimeter of a square of side 6 cm ?",
+        "a": "24 cm",
+        "b": "18 cm",
+        "c": "36 cm",
+        "d": "30 cm",
+        "correct": "24 cm"
+    },
+    {
+        "qno": "6",
+        "question": "How many sides does a hexagon have ?",
+        "a": "4",
+        "b": "5",
+        "c": "6",
+        "d": "8",
+        "correct": "6"
+    },
+    {
+        "qno": "7",
+        "question": "If the area of a rectanble is 48 and the length is 8, what is the width ?",
+        "a": "4",
+        "b": "5",
+        "c": "6",
+        "d": "8",
+        "correct": "6"
+    },
+    {
+        "qno": "8",
+        "question": "If 5x=30,what is x ?",
+        "a": "5",
+        "b": "6",
+        "c": "7",
+        "d": "8",
+        "correct": "6"
+    },
+    {
+        "qno": "9",
+        "question": "What is the cube of 3 ?",
+        "a": "6",
+        "b": "9",
+        "c": "27",
+        "d": "18",
+        "correct": "27"
+    },
+    {
+        "qno": "10",
+        "question": "What is the HCF of 12 and 18 ?",
+        "a": "2",
+        "b": "3",
+        "c": "6",
+        "d": "9",
+        "correct": "6"
+    }
+]

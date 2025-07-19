@@ -11,7 +11,12 @@
             const url=`https://mayankvermavns.github.io/myjson/mathsquizzes.json`;
             console.log(url);
         }
+        
     </script>
+    <h1 id="h1name"></h1>
     <input type="button" value="getquizzeslist"  onclick="getquizzes()">
+    <script>
+        document.getElementById("h1name").innerHTML=localStorage.getItem("quizname");
+    </script>
 </body>
 </html>

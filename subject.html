@@ -8,7 +8,38 @@
 </head>
 
 <body>
+
+    <div id="subject"></div>
+    <h1>Subjectdetails</h1>
+    <input type="button" value="GetSubject" onclick="getSubjects()"><br>
     <script>
+        function showSubject() {
+            const drawdiv = document.getElementById("subject");
+            const n = downloadeddata.length;
+            let output = "<table border='1'>";
+
+            for (let i = 0; i <= n - 1; i++) {
+                console.log(downloadeddata[i]);
+                let currentrow = `<tr><td>${downloadeddata[i].name}</td><td><button onclick="f1('${downloadeddata[i].name}','${downloadeddata[i].url}')">${downloadeddata[i].name}</button></td></tr>`;
+                output += currentrow;
+
+            }
+            output += "</table>";
+            drawdiv.innerHTML = output;
+
+        }
+        function f1(name, url) {
+            console.log(name, url);
+            localStorage.setItem("url", url);
+            localStorage.setItem("quizname", name);
+            location = "quizzeslist.html";
+        }
+
+    </script>
+    <input type="button" value="ShowSubject" onclick="showSubject()"><br>
+    <!-- <input type="button" value="showButton" onclick="showButton()"> -->
+    <script>
+
         let downloadeddata = "";
         function getSubjects() {
             const url = `https://mayankvermavns.github.io/myjson/subjects.json`;
@@ -24,38 +55,20 @@
 
                     downloadeddata = data.subjects;
 
-                    console.log("Data received:", data)
+                    console.log("Data received:", data);
+                    showSubject();
                 })
                 .catch(error => {
                     console.log("Fetch error:", error);
                 });
+
         }
 
 
+
+
+        getSubjects();
     </script>
-    <div id="subject"></div>
-    <h1>Subjectdetails</h1>
-    <input type="button" value="GetSubject" onclick="getSubjects()"><br>
-    <script>
-        function showSubject() {
-            const drawdiv = document.getElementById("subject");
-            const n = downloadeddata.length;
-            let output = "<table border='1'>";
-
-            for (let i = 0; i <= n - 1; i++) {
-                console.log(downloadeddata[i]);
-                let currentrow = `<tr><td>${downloadeddata[i].name}</td><td><a href="${downloadeddata[i].url}">${downloadeddata[i].name}</a></td></tr>`;
-                output += currentrow;
-
-            }
-            output += "</table>";
-            drawdiv.innerHTML = output;
-            
-        }
-
-
-    </script>
-    <input type="button" value="ShowSubject" onclick="showSubject()">
 </body>
 
 </html>

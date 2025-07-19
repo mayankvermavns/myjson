@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizzes example</title>
+    <script>
+        function fetchQuizzes() {
+            const url = `https://mayankvermavns.github.io/myjson/mathsquizzes.json`;
+            console.log(url);
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Error:${response.status}-${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then(quizzesdata => {
+                    displayquizzes(quizzesdata);
+                })
+                .catch(error => {
+                    displayerror(error.message);
+                });
+        }
+        function displayError(data) {
+            console.log(data);
+        }
+        function displayquizzes(data) {
+            console.log(data);
+            const output = document.getElementById("output");
+            output.innerHTML = `<pre>${JSON.stringify(data)}</pre>`;
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Quizzes Fetch Example</h1>
+    <div>
+        <button onclick="fetchQuizzes()">FetchQuizzes</button>
+    </div>
+    <div style="overflow:scroll;" id="output"></div>
+</body>
+
+</html>
